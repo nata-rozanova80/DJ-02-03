@@ -1,10 +1,43 @@
 {% extends 'myapp/base.html' %}
-
+{% load static %}
 {% block title %}
     <title>Data</title>
 {% endblock %}
 
-{% block content%}
-    {% include 'myapp/nav.html'%}
+{% block content %}
+
     <h1>3 страница Data</h1>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'myapp/img/cpu.jpg' %}" class="card-img-top" alt="Процессор" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Процессор</h5>
+                        <p class="card-text">Процессор, или ЦП, отвечает за выполнение всех вычислений и операций в ноутбуке. Он является «мозгом» устройства.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'myapp/img/op.png' %}" class="card-img-top" alt="Оперативная память" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Оперативная память</h5>
+                        <p class="card-text">Оперативная память (RAM) временно хранит данные, с которыми работает процессор, обеспечивая быстродействие ноутбука.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'myapp/img/sd.png' %}" class="card-img-top" alt="Хранение данных" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Хранение данных</h5>
+                        <p class="card-text">Носители информации, такие как SSD или HDD, обеспечивают долговременное хранение данных и файлов на ноутбуке.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

@@ -1,18 +1,90 @@
-<! doctype html>
-<html Lang="en">
+{% load static %}
+
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    {% block title %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'myapp/css/main.css' %}">
+    <style>
+        html, body {
+            height: 100%; /* Высота 100% для html и body */
+            margin: 0;
+            display: flex; /* Используем flexbox */
+            flex-direction: column; /* Располагаем элементы по колонкам */
+            background-color: #87CEEB; /* Общий фон для всей страницы */
+        }
 
+        .sidebar {
+            height: 100vh; /* Высота боковой панели на всю высоту окна */
+            position: fixed; /* Фиксируем боковую панель */
+            background-color: #87CEEB; /* Фон боковой панели */
+            width: 250px; /* Ширина боковой панели */
+        }
+
+        .content {
+            margin-left: 250px; /* Отступ для основного контента */
+            background-color: #87CEEB; /* Фон основного контента */
+            flex-grow: 1; /* Основной контент занимает оставшееся пространство */
+            display: flex; /* Используем flexbox для контента */
+            flex-direction: column; /* Располагаем элементы по колонкам */
+            min-height: 0; /* Убираем минимальную высоту */
+        }
+
+        footer {
+            background-color: #87CEEB; /* Фон футера */
+            text-align: center; /* Центрируем текст футера */
+        }
+
+        .footer-content {
+            padding: 10px; /* Добавляем отступы для футера */
+        }
+    </style>
+    {% block title %}
+    <title>NoteDjango</title>
     {% endblock %}
 </head>
 <body>
-    {% block content %}
+    <div class="sidebar">
+        <div class="sidebar-header text-center p-3">
+            <img src="{% static 'myapp/img/note.png' %}" width="50" alt="Logo">
+            <h3>NoteDjango</h3>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'home' %}">Главная страница Index</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'test' %}">2 страница Тест</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'data' %}">3 страница Data</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'new' %}">4 страница New</a>
+            </li>
+        </ul>
+    </div>
+    <main class="content">
+        {% block content %}
+        <div class="p-4 flex-grow-1">
+            <h1>Добро пожаловать на NoteDjango!</h1>
+            <p>Здесь вы можете управлять своими заметками.</p>
+        </div>
+        {% endblock %}
+    </main>
 
-    {% endblock %}
+    <footer class="footer-content">
+        &copy; 2024 NoteDjango. Все права защищены.
+        <br>
+        <a href="{% url 'pp' %}" class="text-dark">Политика конфиденциальности</a> |
+        <a href="{% url 'contacts' %}" class="text-dark">Контакты</a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

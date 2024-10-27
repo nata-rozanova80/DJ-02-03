@@ -4,8 +4,94 @@
     <title>NEW</title>
 {% endblock %}
 
-{% block content%}
-    {% include 'myapp/nav.html'%}
+{% block content %}
     <h4>4 страница NEW</h4>
-{% endblock %}
 
+    <div class="accordion" id="newsAccordion">
+        <!-- Карточка 1 -->
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Новость 1: Новый ноутбук от XYZ
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#newsAccordion">
+                <div class="card-body">
+                    Новый ноутбук от XYZ оснащен последним процессором и имеет длительное время автономной работы.
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Новость 2: IT-тренды 2023
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#newsAccordion">
+                <div class="card-body">
+                    В 2023 году ожидается рост интереса к искусственному интеллекту и облачным технологиям.
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Новость 3: Обзор нового процессора Intel
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#newsAccordion">
+                <div class="card-body">
+                    Новый процессор Intel обещает улучшить производительность на 30% по сравнению с предшественниками.
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 4 -->
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Новость 4: Рынок ноутбуков в 2023 году
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#newsAccordion">
+                <div class="card-body">
+                    Ожидается увеличение продаж ноутбуков, особенно среди студентов и профессионалов.
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 5 -->
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Новость 5: Программные обновления
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#newsAccordion">
+                <div class="card-body">
+                    Многие производители выпустили обновления для своих ноутбуков, улучшая безопасность и производительность.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
