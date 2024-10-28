@@ -7,6 +7,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),
+    path('news/', include('news.urls'))
 ]
 # Добавляем статические файлы, если DEBUG=True
 if settings.DEBUG:

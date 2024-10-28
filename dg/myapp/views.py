@@ -1,6 +1,10 @@
 
 from django.shortcuts import render
 
+
+def home(request):
+	return render(request, 'myapp/new.html')
+
 def home_view(request):
     return render(request, 'myapp/index.html')
 
