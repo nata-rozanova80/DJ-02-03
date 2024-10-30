@@ -17,6 +17,8 @@
             background-color: #87CEEB; /* Общий фон для всей страницы */
         }
 
+
+
         .sidebar {
             height: 100vh; /* Высота боковой панели на всю высоту окна */
             position: fixed; /* Фиксируем боковую панель */
@@ -31,16 +33,17 @@
             display: flex; /* Используем flexbox для контента */
             flex-direction: column; /* Располагаем элементы по колонкам */
             min-height: 0; /* Убираем минимальную высоту */
+            padding: 20px; /* Добавляем отступы для содержимого */
         }
 
         footer {
             background-color: #87CEEB; /* Фон футера */
             text-align: center; /* Центрируем текст футера */
+            padding: 10px; /* Добавляем отступы для футера */
+            margin-top: auto; /* Позволяет футеру оставаться внизу */
         }
 
-        .footer-content {
-            padding: 10px; /* Добавляем отступы для футера */
-        }
+
     </style>
     {% block title %}
     <title>NoteDjango</title>

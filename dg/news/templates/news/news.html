@@ -13,12 +13,16 @@
 	<div>
 		<h3> {{ new.title }} </h3>
         <p> {{ new.short_description }} </p>
-        <h5> Автор:  {{ user.username }} </h5>
+
+        <h5>Автор: {{ new.author.username }}</h5>  <!-- Используйте new.author для доступа к имени автора -->
+
 		<h6> {{ new.pub_date }} </h6>
         <p> {{ new.text }} </p>
 
 
 	</div>
+    {% empty %}
+        <p>Нет новостей для отображения.</p>  <!-- Сообщение, если нет новостей -->
     {% endfor %}
 
 {% endblock %}
